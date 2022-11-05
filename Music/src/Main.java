@@ -1,6 +1,7 @@
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.stream.Collectors;
 
 public class Main {
     public static void main(String[] args) {
@@ -66,6 +67,22 @@ public class Main {
                 }
                 case 4: {
                     // Choice for listing the songs as per play count
+                    sc.nextLine();
+                    System.out.println("Enter number of play count:");
+                    int asPerPlayCount = sc.nextInt();
+                    List<MusicDetails> newMusicDetailsList = musicDetailsList.stream().filter(m -> m.getPlayCount() >= asPerPlayCount).collect(Collectors.toList());
+                    if (newMusicDetailsList.isEmpty()) {
+                        System.out.println("Play count not reached!!!");
+                        break;
+                    } else {
+                        System.out.println("Song Title\t\t\t\t\tArtist Name\t\t\t\t\tPlay Count");
+                        for (MusicDetails m : newMusicDetailsList
+                        ) {
+                            System.out.println(m.getSongTitle() + "\t\t\t\t\t" + m.getSongArtist() + "\t\t\t\t\t" + m.getPlayCount());
+                        }
+
+                    }
+                    break;
                 }
                 default:
                     System.out.println("Please select a valid option!");
