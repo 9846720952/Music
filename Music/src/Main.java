@@ -24,6 +24,19 @@ public class Main {
             switch (choice) {
                 case 1: {
                     // Choice for adding the song details
+                    MusicDetails musicDetails = new MusicDetails();
+                    sc.nextLine();
+                    System.out.println("Enter song tile:");
+                    songTitle = sc.nextLine();
+                    System.out.println("Enter song artist:");
+                    songArtist = sc.nextLine();
+                    System.out.println("Enter song play count:");
+                    playCount = sc.nextInt();
+                    musicDetails.setSongTitle(songTitle);
+                    musicDetails.setSongArtist(songArtist);
+                    musicDetails.setPlayCount(playCount);
+                    musicDetailsList.add(musicDetails);
+                    break;
 
                 }
                 case 2: {
