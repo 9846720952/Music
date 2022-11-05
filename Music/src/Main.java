@@ -37,7 +37,6 @@ public class Main {
                     musicDetails.setPlayCount(playCount);
                     musicDetailsList.add(musicDetails);
                     break;
-
                 }
                 case 2: {
                     //Choice for deleting the song
@@ -51,11 +50,19 @@ public class Main {
                         break;
                     }
                     break;
-
                 }
                 case 3: {
                     //Choice for listing the songs
-
+                    if (musicDetailsList.isEmpty()) {
+                        System.out.println("You need to add songs first!");
+                    } else {
+                        System.out.println("Song Title\t\t\t\t\tArtist Name\t\t\t\t\tPlay Count");
+                        for (MusicDetails m : musicDetailsList
+                        ) {
+                            System.out.println(m.getSongTitle() + "\t\t\t\t\t" + m.getSongArtist() + "\t\t\t\t\t" + m.getPlayCount());
+                        }
+                    }
+                    break;
                 }
                 case 4: {
                     // Choice for listing the songs as per play count
