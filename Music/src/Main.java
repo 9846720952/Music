@@ -41,6 +41,16 @@ public class Main {
                 }
                 case 2: {
                     //Choice for deleting the song
+                    sc.nextLine();
+                    System.out.println("Enter song title to delete:");
+                    String songTitleToDelete = sc.nextLine();
+                    System.out.println("Are you sure?(Y/N)");
+                    String confirm = sc.nextLine();
+                    if (confirm.equals("Y") || confirm.equals("y")){
+                        musicDetailsList.removeIf(m -> m.getSongTitle().equals(songTitleToDelete));
+                        break;
+                    }
+                    break;
 
                 }
                 case 3: {
